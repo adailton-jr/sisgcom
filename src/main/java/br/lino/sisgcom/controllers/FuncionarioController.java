@@ -57,8 +57,6 @@ public class FuncionarioController {
             return "redirect:/funcionarios";
         } catch (IllegalArgumentException e) {
             return "redirect:/funcionarios";
-        } catch (Exception e) {
-            return "redirect:/funcionarios";
         }
     }
 }
