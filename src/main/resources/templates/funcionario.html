@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Funcionários</title>
+    <script type="text/javascript" th:src="@{/js/script.js}" defer></script>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div>
+    <h1>Hello World</h1>
+    <p>Hoje é:
+        <span id="data"></span></p>
+
+    <p>Agora são:
+        <span id="hora"></span></p>
+</div>
+
+<form method="post" th:action="@{/funcionarios/salvar}" th:object="${funcionario}">
+    <input type="hidden" th:field="*{funcionarioId}">
+    <label for="nome">Nome</label>
+    <input type="text" th:field="*{nome}" id="nome" name="nome">
+    <label for="cpf">CPF</label>
+    <input type="text" th:field="*{cpf}" id="cpf" name="cpf">
+    <label for="endereco">Email</label>
+    <input type="text" th:field="*{endereco}" id="endereco" name="endereco">
+    <label for="dataNascimento">Data de Nascimento</label>
+    <input type="date" th:field="*{{dataNascimento}}" id="dataNascimento" name="dataNascimento">
+    <button type="submit">Salvar</button>
+    <button type="reset">Limpar</button>
+</form>
+
+</body>
+</html>
